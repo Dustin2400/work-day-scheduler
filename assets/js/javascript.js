@@ -6,14 +6,17 @@ $("#currentDay").text(today);
 function auditTask(taskEl) {
     var hour = $(taskEl).attr("id");
     hour = parseInt(hour);
-    var time = moment().set({'hour': hour-1, minute: 59});
-    var pastTime = moment().set({'hour': hour+1, minute: 0});
+    var time = moment().set({'hour': hour, minute: 00});
+    var pastTime = moment().set({'hour': hour+1, minute: 00});
     if (moment().isAfter(pastTime)) {
         taskEl.removeClass("bg-success bg-danger");
         taskEl.addClass("alert-dark");
     } else if (moment().isAfter(time)) {
-        taskEl.removeClass("bg-success");
+        taskEl.removeClass("bg-success alert-dark");
         taskEl.addClass("bg-danger");
+    } else {
+        taskEl.removeClass("bg-danger alert-dark");
+        taskEl.addClass("bg-success");
     }
 }
 
@@ -55,5 +58,6 @@ setInterval(function(){
 }, 60000);
 
 loadTasks();
+checkTasks();
 
 
