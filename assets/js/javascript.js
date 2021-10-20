@@ -45,12 +45,15 @@ function saveTasks() {
 
 function loadTasks() {
     taskArr = JSON.parse(localStorage.getItem("tasks"));
-    for(i=0; i<taskArr.length; i++) {
-        var time = "#" + taskArr[i].time;
-        var task = taskArr[i].task;
-        console.log(time,task);
-        $(time).val(task);
+    if(!taskArr){
+        taskArr=[];
     }
+        for(i=0; i<taskArr.length; i++) {
+            var time = "#" + taskArr[i].time;
+            var task = taskArr[i].task;
+            console.log(time,task);
+            $(time).val(task);
+        }
 }
 
 setInterval(function(){
