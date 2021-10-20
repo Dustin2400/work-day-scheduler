@@ -3,7 +3,7 @@
 # Purpose
 Plan out your workday hourly with this easy and intuitive day planner.
 
-![screenshot](assets/images/screenshot.jpg)
+![screenshot](assets/images/screenshot.JPG)
 
 ## Built with
 * HTML
